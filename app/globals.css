@@ -140,6 +140,15 @@ body{margin:0;background:#F6F5F2}
 .night .lab{color:rgba(241,239,234,.62)}
 .cta{grid-column:1 / 7;max-width:620px}
 .cta .big{margin-top:10px}
+/* the one call to act in the footer: E's only accent, the Goyard ochre, as a solid block on the dark ground (ink on ochre
+   is 6.6:1). Hover lifts the ochre and nudges the arrow on; press gives under the finger. */
+.wa{display:inline-flex;align-items:center;gap:14px;height:56px;margin-top:30px;padding:0 22px 0 24px;border-radius:2px;background:var(--ochre);color:var(--ink);font-size:16px;font-weight:500;letter-spacing:-.005em;
+  transition:background-color 150ms var(--in),transform 120ms var(--std)}
+.wa svg{flex:none;transition:transform 150ms var(--in)}
+.wa:hover,.wa:focus-visible{background:#DA9B2A;transition:background-color 200ms var(--out),transform 120ms var(--std)}
+.wa:hover svg,.wa:focus-visible svg{transform:translateX(3px);transition:transform 200ms var(--out)}
+.wa:active{transform:scale(.98)}
+.night .wa:focus-visible{outline-color:var(--moon)}
 .cols{grid-column:8 / 13;display:grid;grid-template-columns:repeat(3,1fr);gap:var(--g)}
 .cols ul{margin-top:10px}
 .cols li{font-size:20px;line-height:1.36;letter-spacing:-.01em}
@@ -210,6 +219,7 @@ body{margin:0;background:#F6F5F2}
   .faq-h{padding-bottom:24px}
   .qa button{font-size:20px}
   .cta,.cols{grid-column:1 / -1}
+  .wa{display:flex;justify-content:space-between;width:100%;box-sizing:border-box}
   .cols{grid-template-columns:1fr 1fr;margin-top:56px;row-gap:36px}
   .mark{margin-top:96px}
   .mark .logo{grid-column:1 / -1}
