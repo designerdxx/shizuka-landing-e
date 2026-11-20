@@ -3,7 +3,7 @@
 Landing page for Shizuka Luxury (private luxury resale, DIFC Dubai). Design direction E, inspired by gulled.se and built from the "E · Desktop / Mobile" boards on the design canvas.
 
 - Next.js static export, deployed to GitHub Pages by `.github/workflows/deploy.yml` on every push to `main`.
-- Type: Familjen Grotesk (self-hosted through `next/font`).
+- Type: Instrument Sans (self-hosted through `next/font`).
 - Plain CSS in `app/globals.css`; layout switches at 760px with container queries.
 - Motion follows the 12 principles: user-triggered motion stays at or under 300ms (ease-out in, ease-in out), staggers at or under 50ms, presses scale 0.94–0.99, linear easing only on progress indicators, and `prefers-reduced-motion` removes movement.
 
