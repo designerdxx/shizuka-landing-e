@@ -85,7 +85,7 @@ export function Site() {
 
   <footer className="night" id="e-contact">
     <div className="grid">
-      <div className="cta"><h2 className="lab">Start your private sale</h2><p className="big">Send a few photographs and get a valuation range. Our buyers are waiting to bid on your piece. <a className="ul" href={v.waHref}>Message us on WhatsApp</a></p></div>
+      <div className="cta"><h2 className="lab">Start your private sale</h2><p className="big">Send a few photographs and get a valuation range. Our buyers are waiting to bid on your piece.</p><a className="wa" href={v.waHref}><span>Message us on WhatsApp</span><svg viewBox="0 0 16 16" width="16" height="16" fill="none" stroke="currentColor" strokeWidth="1.5" aria-hidden="true" focusable="false"><path d="M2 8h11M9 4l4 4-4 4" /></svg></a></div>
       <div className="cols">
         <div><h3 className="lab">Contact</h3><ul><li><a href={v.waHref}>WhatsApp</a></li><li><span>+971 [phone]</span></li><li><span>[Street address], DIFC</span></li></ul></div>
         <div><h3 className="lab">Follow us</h3><ul><li><a href={v.igHref}>Instagram</a></li><li><a href={v.liHref}>LinkedIn</a></li></ul></div>
