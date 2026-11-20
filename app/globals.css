@@ -154,10 +154,12 @@ body{margin:0;background:#F6F5F2}
 /* reveals: text rises 10px; photographs unmask from the top as they arrive */
 [data-r]{transition:opacity 800ms var(--out) var(--d,0ms),transform 800ms var(--out) var(--d,0ms)}
 .ee[data-armed] [data-r]:not([data-in]){opacity:0;transform:translateY(10px)}
-[data-m]{transition:clip-path 1100ms var(--out) var(--d,0ms)}
-[data-m] img{transition:transform 1500ms var(--out) var(--d,0ms)}
-.ee[data-armed] [data-m]:not([data-in]){clip-path:inset(0 0 100% 0)}
-.ee[data-armed] [data-m]:not([data-in]) img{transform:scale(1.06)}
+/* the mask sits on the pictures, never on the observed frame: a frame clipped to nothing has no area, and Chrome's
+   IntersectionObserver then never reports it on screen, so the photos would stay hidden for good */
+[data-m]>img{transition:clip-path 1100ms var(--out) var(--d,0ms),transform 1500ms var(--out) var(--d,0ms)}
+.slides>img{transition:opacity 200ms var(--in),clip-path 1100ms var(--out),transform 1500ms var(--out)}
+.slides>img.on{transition:opacity 300ms var(--out),clip-path 1100ms var(--out),transform 1500ms var(--out)}
+.ee[data-armed] [data-m]:not([data-in])>img{clip-path:inset(0 0 100% 0);transform:scale(1.06)}
 
 /* press states: every control gives under the finger (scale 0.94–0.99, 120ms) */
 .qa button:active{transform:scale(.99);transition:transform 120ms var(--std)}
@@ -215,10 +217,12 @@ body{margin:0;background:#F6F5F2}
 }
 @media (prefers-reduced-motion: reduce){
   .h1,.hero-ph,.hero-ph img{animation:none}
-  [data-r],[data-m],[data-m] img{transition:opacity 300ms var(--std)}
+  [data-r],[data-m]{transition:opacity 300ms var(--std)}
+  [data-m]>img{transition:none}
+  .slides>img,.slides>img.on{transition:opacity 300ms var(--std)}
   .ee[data-armed] [data-r]:not([data-in]){transform:none}
-  .ee[data-armed] [data-m]:not([data-in]){clip-path:none;opacity:0}
-  .ee[data-armed] [data-m]:not([data-in]) img{transform:none}
+  .ee[data-armed] [data-m]:not([data-in]){opacity:0}
+  .ee[data-armed] [data-m]:not([data-in])>img{clip-path:none;transform:none}
 }
 
 /* menu open: the header (and its Close button) stays pinned above the overlay */
