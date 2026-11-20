@@ -1,9 +1,9 @@
 import type { Metadata, Viewport } from "next";
-import { Familjen_Grotesk } from "next/font/google";
+import { Instrument_Sans } from "next/font/google";
 import { asset } from "./asset";
 import "./globals.css";
 
-const f_fam = Familjen_Grotesk({ variable: "--f-fam", subsets: ["latin"], weight: ["400", "500"], display: "swap" });
+const f_fam = Instrument_Sans({ variable: "--f-fam", subsets: ["latin"], weight: ["400", "500"], display: "swap" });
 
 const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "http://localhost:3000";
 
